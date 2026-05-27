@@ -1,0 +1,97 @@
+@Metadata.layer: #CORE
+@UI: {
+  headerInfo: {
+    typeName: 'Item',
+    typeNamePlural: 'Items',
+    title: { type: #STANDARD, value: 'Name' },
+    description: { type: #STANDARD, value: 'Description' }
+  }
+}
+annotate view ZC_SO_ITEM_4112 with
+{
+  @UI.facet: [
+    {
+      id: 'Item',
+      purpose: #STANDARD,
+      type: #IDENTIFICATION_REFERENCE,
+      label: 'Item',
+      position: 10
+    }
+  ]
+
+  @UI: {
+    lineItem: [{ position: 10 }],
+    identification: [{ position: 10 }]
+  }
+  Id;
+
+  @EndUserText.label: 'Sales Order ID'
+  @UI: {
+    lineItem: [{ position: 20 }],
+    identification: [{ position: 20 }]
+  }
+  SalesOrderId;
+
+  @EndUserText.label: 'Name'
+  @UI: {
+    lineItem: [{ position: 30, importance: #HIGH }],
+    identification: [{ position: 30 }]
+  }
+  Name;
+
+  @UI: {
+    lineItem: [{ position: 40 }],
+    identification: [{ position: 40 }]
+  }
+  Description;
+
+  @EndUserText.label: 'Release Date'
+  @UI: {
+    lineItem: [{ position: 50 }],
+    identification: [{ position: 50 }]
+  }
+  ReleaseDate;
+
+  @EndUserText.label: 'Discontinued Date'
+  @UI: {
+    lineItem: [{ position: 60 }],
+    identification: [{ position: 60 }]
+  }
+  DiscontinuedDate;
+
+  @UI: {
+    lineItem: [{ position: 70 }],
+    identification: [{ position: 70 }]
+  }
+  Price;
+
+  @UI: {
+    lineItem: [{ position: 80 }],
+    identification: [{ position: 80 }]
+  }
+  Height;
+
+  @UI: {
+    lineItem: [{ position: 90 }],
+    identification: [{ position: 90 }]
+  }
+  Width;
+
+  @UI: {
+    lineItem: [{ position: 100 }],
+    identification: [{ position: 100 }]
+  }
+  Depth;
+
+  @UI: {
+    lineItem: [{ position: 110 }],
+    identification: [{ position: 110 }]
+  }
+  Quantity;
+
+  @UI: {
+    lineItem: [{ position: 120 }],
+    identification: [{ position: 120 }]
+  }
+  UnitOfMeasure;
+}

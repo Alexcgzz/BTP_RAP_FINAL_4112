@@ -1,0 +1,5 @@
+@EndUserText.label: 'Sales Order Service Definition'
+define service ZSD_SO_4112 {
+  expose ZC_SO_HEADER_4112 as Header;
+  expose ZC_SO_ITEM_4112   as Item;
+}

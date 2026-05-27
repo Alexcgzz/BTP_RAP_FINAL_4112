@@ -1,0 +1,77 @@
+managed implementation in class zbp_i_so_header_4112 unique;
+strict ( 2 );
+
+define behavior for ZI_SO_HEADER_4112 alias Header
+persistent table zso_hdr_4112
+lock master
+authorization master ( instance )
+etag master LocalLastChangedAt
+{
+
+  create;
+  update;
+  delete;
+
+
+  association _Items { create; }
+
+  field ( numbering : managed, readonly ) Uuid;
+  field ( readonly ) Id;
+  field ( mandatory ) Email;
+
+  determination setDefaultID on modify { create; }
+
+  validation validateEmail on save { create; update; field Email; }
+  validation validateDates on save { create; update; field CreatedOn, DeliveryDate; }
+
+  mapping for zso_hdr_4112
+    {
+      Uuid               = uuid;
+      Id                 = id;
+      Email              = email;
+      FirstName          = firstname;
+      LastName           = lastname;
+      Country            = country;
+      CreatedOn          = createdon;
+      DeliveryDate       = deliverydate;
+      OrderStatus        = orderstatus;
+      ImageUrl           = imageurl;
+      LocalLastChangedAt = locallastchangedat;
+    }
+
+}
+
+define behavior for ZI_SO_ITEM_4112 alias Item
+persistent table zso_itm_4112
+lock dependent by _Header
+authorization dependent by _Header
+{
+
+  update;
+  delete;
+
+  field ( mandatory ) Id;
+  field ( readonly ) SalesOrderId, SalesOrderUUId;
+
+  association _Header;
+
+  validation validateQuantity on save { create; update; field Quantity; }
+
+  mapping for zso_itm_4112
+    {
+      Id               = id;
+      SalesOrderUuid   = salesorderuuid;
+      SalesOrderId     = salesorderid;
+      Name             = name;
+      Description      = description;
+      ReleaseDate      = releasedate;
+      DiscontinuedDate = discontinueddate;
+      Price            = price;
+      Height           = height;
+      Width            = width;
+      Depth            = depth;
+      Quantity         = quantity;
+      UnitOfMeasure    = unitofmeasure;
+    }
+
+}

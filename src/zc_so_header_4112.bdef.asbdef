@@ -1,0 +1,20 @@
+projection;
+strict ( 2 );
+
+define behavior for ZC_SO_HEADER_4112 alias Header
+{
+  use create;
+  use update;
+  use delete;
+
+  use association _Items { create; }
+}
+
+define behavior for ZC_SO_ITEM_4112 alias Item
+{
+
+  use update;
+  use delete;
+
+  use association _Header;
+}

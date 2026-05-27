@@ -1,0 +1,88 @@
+@Metadata.layer: #CORE
+@UI: {
+  headerInfo: {
+    typeName: 'Sales Order',
+    typeNamePlural: 'Sales Orders',
+    title: { type: #STANDARD, value: 'Id' },
+    description: { type: #STANDARD, value: 'Email' }
+  }
+}
+annotate view ZC_SO_HEADER_4112 with
+{
+  @UI.facet: [
+    {
+      id: 'Header',
+      purpose: #STANDARD,
+      type: #IDENTIFICATION_REFERENCE,
+      label: 'Sales Order',
+      position: 10
+    },
+    {
+      id: 'Items',
+      purpose: #STANDARD,
+      type: #LINEITEM_REFERENCE,
+      label: 'Items',
+      position: 20,
+      targetElement: '_Items'
+    }
+  ]
+
+  @UI: {
+    lineItem: [{ position: 10, importance: #HIGH }],
+    identification: [{ position: 10 }],
+    selectionField: [{ position: 10 }]
+  }
+  Id;
+
+  @UI: {
+    lineItem: [{ position: 20, importance: #HIGH }],
+    identification: [{ position: 20 }],
+    selectionField: [{ position: 20 }]
+  }
+  Email;
+
+  @UI: {
+    lineItem: [{ position: 30 }],
+    identification: [{ position: 30 }]
+  }
+  FirstName;
+
+  @UI: {
+    lineItem: [{ position: 40 }],
+    identification: [{ position: 40 }]
+  }
+  LastName;
+
+  @UI: {
+    lineItem: [{ position: 50 }],
+    identification: [{ position: 50 }],
+    selectionField: [{ position: 30 }]
+  }
+  Country;
+
+  @EndUserText.label: 'Created On'
+  @UI: {
+    lineItem: [{ position: 60 }],
+    identification: [{ position: 60 }]
+  }
+  CreatedOn;
+
+  @EndUserText.label: 'Delivery Date'
+  @UI: {
+    lineItem: [{ position: 70 }],
+    identification: [{ position: 70 }]
+  }
+  DeliveryDate;
+
+  @UI: {
+    lineItem: [{ position: 80 }],
+    identification: [{ position: 80 }],
+    selectionField: [{ position: 40 }]
+  }
+  OrderStatus;
+
+  @UI: {
+    identification: [{ position: 90 }]
+  }
+  ImageUrl;
+}
