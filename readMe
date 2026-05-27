@@ -1,0 +1,74 @@
+BTP_RAP_FINAL_4112
+
+SAP RAP (RESTful ABAP Programming Model) project developed in SAP BTP ABAP Environment as a final backend application.
+
+📌 Project Overview
+
+This project implements a complete Sales Order Management application using:
+
+SAP RAP Managed Scenario
+CDS View Entities
+Behavior Definitions & Implementations
+Fiori Elements UI
+OData V4 Services
+Validations & Determinations
+Parent-Child Composition
+SAP BTP ABAP Environment
+
+The application allows users to:
+
+Create Sales Orders
+Auto-generate Sales Order IDs
+Manage Sales Order Items
+Validate business rules
+Consume the application through SAP Fiori Elements
+🛠 Technologies Used
+ABAP RESTful Application Programming Model (RAP)
+SAP BTP ABAP Environment
+CDS Views
+Behavior Definitions
+Behavior Implementations
+OData V4
+SAP Fiori Elements
+Eclipse ADT
+abapGit
+📂 Main Objects
+Header Entity
+ZI_SO_HEADER_4112
+ZC_SO_HEADER_4112
+ZSO_HDR_4112
+Item Entity
+ZI_SO_ITEM_4112
+ZC_SO_ITEM_4112
+ZSO_ITM_4112
+Behavior Implementation
+ZBP_I_SO_HEADER_4112
+⚙ Features
+
+✅ Managed RAP Scenario
+✅ Parent-Child Composition
+✅ Auto-generated Sales Order IDs
+✅ Field Validations
+✅ Determinations
+✅ Fiori Elements UI
+✅ OData Service Exposure
+✅ CRUD Operations
+
+🚀 How to Run
+Open Eclipse ADT
+Pull repository using abapGit
+Activate all objects
+Publish OData Service Binding
+Open Fiori Elements Preview
+📷 Application Preview
+Sales Order List Report
+Object Page
+Sales Order Items Table
+Auto-generated IDs (SO001, SO002, etc.)
+👨‍💻 Author
+
+Alejandro Gonzalez Carrillo
+
+📄 License
+
+This project is for educational purposes.
